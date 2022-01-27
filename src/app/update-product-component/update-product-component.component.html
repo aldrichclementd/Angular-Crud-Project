@@ -1,0 +1,28 @@
+<div class="container mt-4 shadow w-50">
+  <h1>Ajout de produit</h1>
+  <form >
+    <div class="form-group">
+      <label for="id_product">Numero produit</label>
+      <input type="text" [(ngModel)]="produit.id"  class="form-control" name="id_product" id="id_product">
+    </div>
+    <div class="form-group">
+      <label for="nom_produit">Nom produit:</label>
+      <input type="text" [(ngModel)]="produit.name" class="form-control" name="nom_produit" id="nom_produit">
+    </div>
+    <div class="form-group">
+      <label for="prix_produit">Prix produit:</label>
+      <input type="text" [(ngModel)]="produit.price" class="form-control" name="prix_produit" id="prix_produit">
+    </div>
+    <div class="form-group">
+      <label for="DateCreation">Date de produit:</label>
+      <input type="date" [ngModel]="produit.dateCreation|date:'yyyy-MM-dd'"
+             (ngModelChange)="produit.dateCreation=$event" class="form-control" name="DateCreation" id="DateCreation">
+    </div>
+
+
+    <button type="submit" (click)="OnUpdateProduct()" class="btn btn-outline-success mt-4">Valider</button>
+  </form>
+
+
+</div>
+
